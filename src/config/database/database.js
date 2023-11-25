@@ -16,7 +16,7 @@ const authenticated = async () => {
 
 const syncUp = async () => {
     try {
-        await sequelize.sync({ force: true })
+        await sequelize.sync()
         console.log("Connection has been synced succesfully.")
     } catch (error) {
         console.log(error)

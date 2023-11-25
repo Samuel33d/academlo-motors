@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize')
 const { sequelize } = require('./../config/database/database')
-// const User = require('.././users/users.model')
+
 
 const Repairs = sequelize.define('repairs', {
     id: {
@@ -16,10 +16,12 @@ const Repairs = sequelize.define('repairs', {
     status: {
         type: DataTypes.ENUM('pending', 'completed', 'cancelled'),
         defaultValue: 'pending'
+    },
+    userId: {
+        type: DataTypes.INTEGER,
+        defaultValue: 1,
+        allowNull: true,
     }
 })
-
-// User.hasMany(Repairs, {foreignKey: 'userId'})
-// Repairs.belongsTo(User, {foreignKey: 'userId'})
 
 module.exports = Repairs
