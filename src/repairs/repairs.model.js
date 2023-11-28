@@ -19,8 +19,7 @@ const Repairs = sequelize.define('repairs', {
     },
     userId: {
         type: DataTypes.INTEGER,
-        defaultValue: 1,
-        allowNull: true,
+        allowNull: false
     }
 })
 

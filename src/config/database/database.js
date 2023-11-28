@@ -8,7 +8,7 @@ const sequelize = new Sequelize(envs.DB_URI, {
 const authenticated = async () => {
     try {
         await sequelize.authenticate()
-        console.log("Connection has been established successfully.")
+        console.log("Connection has been established successfully.😀")
     } catch (error) {
         console.log(error)
     }
@@ -17,7 +17,7 @@ const authenticated = async () => {
 const syncUp = async () => {
     try {
         await sequelize.sync()
-        console.log("Connection has been synced succesfully.")
+        console.log("Connection has been synced succesfully.😀")
     } catch (error) {
         console.log(error)
     }

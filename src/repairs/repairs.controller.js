@@ -89,7 +89,7 @@ const updateRepair = async (req, res) => {
 const deleteRepair = async (req, res) => {
     try {
         const { id } = req.params
-        const repair = await RepairsServices.findOne(id)
+        const repair = await RepairsServices.findOne(id, ['pending', 'completed'])
 
         
         if (!repair) {
@@ -99,7 +99,7 @@ const deleteRepair = async (req, res) => {
             })
         }
         
-        if (repair.status === 'completed') {
+        if (repair?.status === 'completed') {
             return res.status(400).json({
                 status: "error",
                 message: `You cannot cancel a completed repair`

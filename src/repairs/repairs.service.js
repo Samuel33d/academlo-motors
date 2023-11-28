@@ -11,11 +11,11 @@ class RepairsServices {
             }
         })
     }
-    static async findOne(id) {
+    static async findOne(id, status = 'pending') {
         return await Repairs.findOne({
             where: {
                 id,
-                status: 'pending'
+                status: status
             }
         })
     }
